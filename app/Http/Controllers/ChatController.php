@@ -10,12 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ChatController extends Controller
 {
-    /*public function get(Request $request)
-    {
-        return view('contact');
-    }*/
-
-    public function __invoke(Request $request, bool $msgSent = false)
+   public function __invoke(Request $request, bool $msgSent = false)
     {
         if ($request->has('issue')) {
             $request->validate([

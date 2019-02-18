@@ -1,7 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('content')
-    <p>The file was uploaded</p>
-    {{$imgname}}
-    </body>
-    </html>
+    <p> {{$num}} files has been uploaded </p> <br />
 @endsection

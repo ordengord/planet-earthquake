@@ -29,12 +29,4 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function myOrders(Request $request)
-    {
-        $orders = Order::select('latitude', 'longitude', 'start_date', 'end_date', 'cost')
-            ->where('user_id', Auth::user()->id)
-            ->where('Transaction_id', null)
-            ->get();
-        return view('my-orders')->with(compact('orders'));
-    }
 }

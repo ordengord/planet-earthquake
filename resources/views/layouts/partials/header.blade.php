@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href=""><strong>Purchase a forecast</strong></a>
+        <a class="navbar-brand" href="{{route('order')}}"><strong>Purchase a forecast</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -12,7 +12,7 @@
                     <a class="nav-link" href="{{route('about')}}">About <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('order')}}">Today's forecast </a>
+                    <a class="nav-link" href="{{route('today')}}">Today's forecast </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('contact')}}">Contact us</a>
@@ -26,16 +26,14 @@
                                     Admin Content Manager
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="">Upload the diagrams</a>
+                                    <a class="dropdown-item" href="{{route('admin.upload')}}">Upload the diagrams</a>
                                     <a class="dropdown-item" href="/admin/diagrams/showtime">Current demo diagrams</a>
-                                    <a class="dropdown-item" href="">Messages</a>
                                     <a class="dropdown-item" href="/admin/users/showtime">Users</a>
-                                    <a class="dropdown-item" href="/admin/visitors/showtime">Visitors</a>
-                                    <a class="dropdown-item" href="/admin/clients/showtime">Clients</a>
-                                    <a class="dropdown-item" href="/admin/orders/showtime">Current orders</a>
-                                    <a class="dropdown-item" href="/admin/fulfilled/showtime">Fulfilled order</a>
+                                    <a class="dropdown-item" href="/admin/orders/showtime">All orders</a>
+                                    <a class="dropdown-item" href="/admin/transactions/showtime">Transacted orders</a>
+                                    <a class="dropdown-item" href="/admin/chats/showtime">Messages to admin</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Error-exception log</a>
+                                    <a class="dropdown-item" href="#">Error-exception log (n/a) </a>
                                 </div>
                             </div>
                         </li>
@@ -54,7 +52,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @if(Auth::check())
                             <a class="dropdown-item" href="{{route('home')}}">User profile</a>
-                            <a class="dropdown-item" href="">My orders</a>
+                            <a class="dropdown-item" href="{{route('my-orders')}}">My orders</a>
                             <div class="dropdown-divider"></div>
                             <form method="post" action="{{route('logout')}}">
                                 {{csrf_field()}}
